@@ -3,10 +3,10 @@
 A [Claude Code](https://claude.com/claude-code) skill that turns a folder of messy downloads (movies, TV episodes, music, or a mix) into a clean, consistently named media library. It runs on Windows, macOS, and Linux with **nothing to install**: the skill ships a small self-contained program for each platform.
 
 ```
-Peter Pan (2003) (1080p BluRay x265 HEVC 10bit AAC 5.1 Tigole)/…mkv
+Peter.Pan.2003.1080p.mkv
   → Peter Pan (2003) [1080p]/Peter Pan (2003) [1080p].mkv
 
-Silo.S02.1080p.ATVP.WEB-DL/Silo.S02E01.1080p.ATVP.WEB-DL.mkv
+Silo.S02.1080p/silo.s02e01.1080p.mkv
   → Silo (2023) [1080p]/Season 02/S02E01 - The Engineer.mkv
 
 02 nutshell.mp3   (artist "Alice In Chains", album "Jar Of Flies (Remastered)", no cover)
@@ -36,7 +36,7 @@ Install it, type `/media-ingest`, and Claude takes it from there: it sorts the f
 ## What it does
 
 **Movies and TV**
-- Strips release junk from names: codecs, sources, audio specs, bit depth, release groups, and site tags.
+- Strips technical clutter from names: codecs, sources, audio specs, bit depth, and other tags.
 - Detects title, year, quality (`2160p` / `1080p` / `720p` / `480p`), and season/episode, including multi-episode files (`S01E01-E02`) and `1x05`-style numbering.
 - Keeps intentional dots (`A.I.`, `S.W.A.T.`) and country tags (`The Office (US)`).
 - Optionally looks up canonical series names, first-air years, and **episode titles** on TVmaze.
@@ -163,7 +163,7 @@ Plenty of people do something after organizing: upload to a NAS over SSH, trigge
 
 - **Draft first.** Nothing moves until the plan has been reviewed. Every command that changes files has `--dry-run`.
 - **Never overwrites.** An existing destination file is reported as a conflict and the source is left alone.
-- **Never deletes.** Source folders are removed only once completely empty. Folders still holding junk (`RARBG.txt`, `Sample/`) are listed for you to decide on. Replaced music goes to `<library>/.replaced/` and duplicates to `<source>/.duplicates/`. The one exception is a plain `.txt` lyrics file, which is replaced when a synced `.lrc` for the same song is found.
+- **Never deletes.** Source folders are removed only once completely empty. Folders still holding junk (stray `.txt` files, `Sample/`) are listed for you to decide on. Replaced music goes to `<library>/.replaced/` and duplicates to `<source>/.duplicates/`. The one exception is a plain `.txt` lyrics file, which is replaced when a synced `.lrc` for the same song is found.
 - **Verified cross-drive moves.** Moving to another drive or a mounted NAS copies the file, compares MD5 checksums, and only then removes the source.
 - **Safe tag writes.** FLAC files are rewritten to a temporary file and swapped in only once complete.
 - **Hidden files are ignored.** Anything starting with `.` is skipped.
