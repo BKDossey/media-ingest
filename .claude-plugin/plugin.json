@@ -1,0 +1,7 @@
+{
+  "name": "media-ingest",
+  "version": "1.0.0",
+  "description": "Organize downloaded movies, TV shows, and music (MP3/FLAC) into a clean library, with optional MusicBrainz tag fixing, cover art, and synced lyrics. No dependencies.",
+  "license": "MIT",
+  "keywords": ["media", "movies", "tv", "music", "musicbrainz", "lyrics", "go", "plex", "jellyfin", "navidrome"]
+}

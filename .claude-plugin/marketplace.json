@@ -1,0 +1,12 @@
+{
+  "name": "media-ingest",
+  "owner": { "name": "media-ingest contributors" },
+  "plugins": [
+    {
+      "name": "media-ingest",
+      "source": "./",
+      "description": "Organize downloaded movies, TV shows, and music (MP3/FLAC) into a clean library, with optional MusicBrainz tag fixing, cover art, and synced lyrics. No dependencies.",
+      "version": "1.0.0"
+    }
+  ]
+}

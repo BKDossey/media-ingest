@@ -1,0 +1,6 @@
+/media-ingest
+/media-ingest.exe
+*.partial
+*.mi-tmp
+.DS_Store
+Thumbs.db
