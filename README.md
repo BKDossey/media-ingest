@@ -71,14 +71,14 @@ You need [Claude Code](https://claude.com/claude-code) (CLI, desktop app, or IDE
 ### Option A: as a plugin (recommended)
 In Claude Code:
 ```
-/plugin marketplace add YOUR-USERNAME/media-ingest
+/plugin marketplace add BKDossey/media-ingest
 /plugin install media-ingest@media-ingest
 ```
 Run `/plugin marketplace update media-ingest` to pull updates. Installing the plugin the same way on each of your machines gets you the same skill everywhere.
 
 ### Option B: copy the skill folder
 ```bash
-git clone https://github.com/YOUR-USERNAME/media-ingest.git
+git clone https://github.com/BKDossey/media-ingest.git
 ```
 Then copy `media-ingest/skills/media-ingest/` into your personal skills folder:
 
